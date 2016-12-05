@@ -1,17 +1,12 @@
 package tpilet.silver.com.swipeviews;
 
-import android.app.ActionBar;
-import android.app.FragmentTransaction;
-import android.support.annotation.Nullable;
-import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.view.View;
+import android.support.v7.app.AppCompatActivity;
+import android.view.WindowManager;
 
-import static android.R.attr.onClick;
-
-public class MainActivity extends FragmentActivity {
+public class MainActivity extends AppCompatActivity {
     ViewPager viewPager;
     FragmentPagerAdapter ft;
 
@@ -24,5 +19,6 @@ public class MainActivity extends FragmentActivity {
         ft = new FragmentPageAdapter(getSupportFragmentManager());
 
         viewPager.setAdapter(ft);
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
     }
 }
